@@ -1,0 +1,8 @@
+{% extends "base-template.njk" %}
+
+{% block pageContent %}
+  <h1 class="govuk-heading-xl">MHRA Website Checker</h1>
+  {% from "text-input.njk" import renderInput %}
+
+  {{ renderInput("What is the name of the event?", "event-name", "eventName") }}
+{% endblock %}
