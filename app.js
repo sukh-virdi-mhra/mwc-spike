@@ -3,8 +3,8 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const app = express();
 
-app.use('/stylesheets', express.static(path.join(dirname, './node_modules/govuk-frontend/dist/govuk')));
-app.use('/javascripts', express.static(path.join(dirname, './node_modules/govuk-frontend/dist/govuk')));
+app.use('/stylesheets', express.static(path.join(__dirname, './node_modules/govuk-frontend/dist/govuk')));
+app.use('/javascripts', express.static(path.join(__dirname, './node_modules/govuk-frontend/dist/govuk')));
 
 nunjucks.configure([
   './node_modules/govuk-frontend/dist',
