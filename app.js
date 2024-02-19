@@ -14,7 +14,7 @@ nunjucks.configure([
 });
 
 app.get('/', (request, response) => {
-    response.render('website-checker.njk');
+    response.render('question.njk');
 });
 
 const PORT = process.env.PORT || 3000;
