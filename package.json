@@ -1,0 +1,8 @@
+{
+  "name": "mwc-spike",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sukh-virdi-mhra/mwc-spike.git",
+  "author": "Sukh Virdi <sukh.virdi2@mhra.gov.uk>",
+  "license": "MIT"
+}
