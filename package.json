@@ -15,8 +15,8 @@
     "nunjucks": "^3.2.4"
   },
   "scripts": {
-      "start": "nodemon --ext js,njk --exec babel-node app.js"
-    },
+    "start": "nodemon --ext js,njk --exec babel-node app.js"
+  },
   "devDependencies": {
     "nodemon": "^3.0.3"
   }
