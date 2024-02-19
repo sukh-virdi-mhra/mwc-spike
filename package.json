@@ -6,6 +6,11 @@
   "author": "Sukh Virdi <sukh.virdi2@mhra.gov.uk>",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/register": "^7.23.7",
     "express": "^4.18.2",
     "govuk-frontend": "^5.1.0",
     "njk": "^6.0.0",
