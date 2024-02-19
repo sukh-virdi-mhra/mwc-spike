@@ -2,7 +2,16 @@
 
 {% block pageContent %}
   <h1 class="govuk-heading-xl">MHRA Medicines Website Checker</h1>
-  {% from "text-input.njk" import renderInput %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
 
-  {{ renderInput("What is the link of the website?", "event-name", "eventName") }}
+  {{ govukInput({
+    label: {
+      text: "What is the link of the website?",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    classes: "govuk-!-width-two-thirds",  
+    id: "website-link",
+    name: "websiteLink"
+  }) }}
 {% endblock %}
