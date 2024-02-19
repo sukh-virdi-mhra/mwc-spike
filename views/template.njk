@@ -1,0 +1,18 @@
+{% extends "govuk/template.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/stylesheets/govuk-frontend.min.css">
+{% endblock %}
+
+{% block content %}
+  {% block pageContent %}{% endblock %}
+{% endblock %}
+
+{% block bodyEnd %}
+  {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+  <script type="module" src="/javascripts/govuk-frontend.min.js"></script>
+  <script type="module">
+    import { initAll } from '/javascripts/govuk-frontend.min.js'
+    initAll()
+  </script>
+{% endblock %}
