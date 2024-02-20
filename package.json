@@ -12,7 +12,8 @@
     "express": "^4.18.2",
     "govuk-frontend": "^5.1.0",
     "njk": "^6.0.0",
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "pg": "^8.11.3"
   },
   "scripts": {
     "start": "nodemon --ext js,njk --exec babel-node app.js"
