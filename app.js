@@ -1,12 +1,12 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
-const testDbConnectionRoute = require('./routes/testDbConnection');
-const submitFormRoute = require('./routes/submitForm');
+const testDBConnection = require('./routes/testDBConnection');
+const submitForm = require('./routes/submitForm');
 const pool = require('./connection');
 
 const app = express();
-const PORT = process.env.PORT || 3000; 
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,8 +21,12 @@ nunjucks.configure([
   express: app
 });
 
-app.use('/', testDbConnectionRoute);
-app.use('/', submitFormRoute);
+app.use('/', testDBConnection);
+app.use('/', submitForm);
+
+app.get('/', (req, res) => {
+  res.render('question.njk');
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
