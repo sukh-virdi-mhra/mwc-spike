@@ -39,6 +39,45 @@ This will start the server using Nodemon, which will automatically restart the s
 
 Once the server is running, you can access the application in your web browser at `http://localhost:3000`.
 
+## Database Setup
+
+MWC Spike requires a PostgreSQL database to store data. Follow these steps to set up the database connection:
+
+### 1. Install PostgreSQL
+
+If you haven't already installed PostgreSQL, you can download it from the [official PostgreSQL website](https://www.postgresql.org/download/) and follow the installation instructions for your operating system.
+
+### 2. Create a Database
+
+Once PostgreSQL is installed, create a new database. You can do this using the `createdb` command in your terminal:
+
+```bash
+createdb MHRA
+```
+
+Replace `MHRA` with the desired name of your database.
+
+### 3. Configure Database Connection
+
+Create a file named `connection.js` in the root directory of your project. This file will contain the configuration for connecting to your PostgreSQL database. You can set up the connection configuration using environment variables or any other method that suits your project's needs. Here's an example of how you can structure the `connection.js` file:
+
+```javascript
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL, // Use environment variable for connection string
+});
+
+module.exports = pool;
+
+```
+
+Modify the connection configuration according to your requirements, and consider using environment variables to securely manage sensitive information like database credentials.
+
+### 4. Run the Application
+Once you've set up the database connection configuration, you can run the MWC Spike application using the provided installation and usage instructions in this README.
+
+
 ## Dependencies
 
 - **Express**: Web application framework for Node.js.
@@ -49,6 +88,8 @@ Once the server is running, you can access the application in your web browser a
 - **@babel/preset-env**: Babel preset for compiling JavaScript to a specific version of ECMAScript.
 - **@babel/register**: Babel register hook, used for requiring Babel transpiled files in Node.js.
 - **govuk-frontend**: Government Design System (GOV.UK Frontend) for styling web applications.
+- **pg**: PostgreSQL client for Node.js.
+
 
 ## Development Dependencies
 
