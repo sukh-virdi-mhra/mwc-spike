@@ -2,18 +2,20 @@
 
 {% block pageContent %}
   <h1 class="govuk-heading-xl">MHRA Medicines Website Checker</h1>
-  {% from "govuk/components/input/macro.njk" import govukInput %}
+  
+  <form action="/submit" method="post">
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+    {{ govukInput({
+      label: {
+        text: "What is the link of the website?",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      classes: "govuk-!-width-two-thirds",  
+      id: "website-link",
+      name: "websiteLink"
+    }) }}
 
-  {{ govukInput({
-    label: {
-      text: "What is the link of the website?",
-      classes: "govuk-label--l",
-      isPageHeading: true
-    },
-    classes: "govuk-!-width-two-thirds",  
-    id: "website-link",
-    name: "websiteLink"
-  }) }}
-
-  {% include "submit-button.njk" %}
+    <button class="govuk-button" type="submit">Submit</button>
+  </form>
 {% endblock %}
