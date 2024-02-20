@@ -3,7 +3,7 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const testDbConnectionRoute = require('./routes/testDbConnection');
 const submitFormRoute = require('./routes/submitForm');
-const pool = require('./config/connection');
+const pool = require('./connection');
 
 const app = express();
 const PORT = process.env.PORT || 3000; 

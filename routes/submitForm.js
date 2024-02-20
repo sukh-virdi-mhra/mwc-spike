@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../config/connection');
+const pool = require('../connection');
 
 router.post('/submit', async (req, res) => {
   const { websiteLink } = req.body;
